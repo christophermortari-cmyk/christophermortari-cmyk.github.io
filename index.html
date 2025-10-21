@@ -6,77 +6,154 @@
   <title>Christopher Mortari - Portfolio Profesional</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.6;
     }
+
     header {
       text-align: center;
-      background: #1e2a38;
-      color: white;
-      padding: 40px 20px;
+      background: #1e1e2f;
+      padding: 60px 20px;
     }
-    section {
-      padding: 20px 60px;
-      max-width: 900px;
-      margin: auto;
-    }
-    img {
+
+    header img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
+      border: 3px solid #4cafef;
     }
+
+    header h1 {
+      margin: 20px 0 10px;
+      font-size: 2.2em;
+      color: #4cafef;
+    }
+
+    header p.lema {
+      font-style: italic;
+      color: #c5c5c5;
+      font-size: 1.1em;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
     h2 {
-      color: #1e2a38;
+      color: #4cafef;
+      border-bottom: 2px solid #4cafef;
+      padding-bottom: 5px;
     }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .competencias li {
+      margin-bottom: 5px;
+    }
+
+    .imagen-ciber {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #4cafef;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
+      background: #1e1e2f;
       padding: 20px;
-      background: #1e2a38;
-      color: white;
-      margin-top: 30px;
+      margin-top: 50px;
+    }
+
+    .video-link {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #4cafef;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .video-link:hover {
+      background-color: #357ab8;
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <img src="tu-foto.jpg" alt="Foto de Christopher Mortari">
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEU_04trVB9Yw/profile-displayphoto-shrink_800_800/B4DZZYdfYTGgAg-/0/1745240849225?e=1762387200&v=beta&t=smYgHlmgyqKmqpc5Z8751UbvRy998xJtHDMcEDmqwUc" alt="Foto de Christopher Mortari">
     <h1>Christopher Mortari</h1>
-    <p><em>"La seguridad es el corazón de la tecnología moderna"</em></p>
+    <p class="lema">"La seguridad es el corazón de la tecnología moderna"</p>
   </header>
 
+  <!-- BIOGRAFÍA -->
   <section>
     <h2>Biografía breve</h2>
-    <p>Actualmente estudio Administración de Redes con perfil en Ciberseguridad en IFP Planeta Formación y realizo mis prácticas en la empresa 480. Mi objetivo profesional es desarrollarme en el ámbito de la ciberseguridad, aportando soluciones seguras y eficientes.</p>
+    <p>Soy estudiante de <strong>Administración de Redes con perfil en Ciberseguridad</strong> en IFP Planeta Formación y actualmente realizo mis <strong>prácticas en la empresa 480</strong>, trabajando en tareas relacionadas con sistemas y soporte técnico. Mi objetivo profesional es desarrollarme en ciberseguridad, aportando soluciones seguras y eficientes.</p>
+  </section>
 
+  <!-- FORMACIÓN Y EXPERIENCIA -->
+  <section>
     <h2>Formación y experiencia</h2>
     <ul>
       <li>Grado: Administración de Redes con perfil en Ciberseguridad – IFP Planeta Formación</li>
       <li>Prácticas en empresa: 480 – Área de Sistemas y Soporte Técnico</li>
+      <li>Proyectos: Configuración de routers, simulaciones de redes con Packet Tracer, administración de sistemas Linux y Windows Server</li>
     </ul>
-
-    <h2>Ejemplos de trabajos o logros</h2>
-    <ul>
-      <li>Proyecto de redes con Packet Tracer (enlace o imagen)</li>
-      <li>Configuración de router Cisco con rutas estáticas</li>
-      <li>Simulación de red segura en entorno Linux</li>
-    </ul>
-
-    <h2>Competencias</h2>
-    <ul>
-      <li><strong>Técnicas:</strong> Redes, Ciberseguridad, Linux, Windows Server, Packet Tracer</li>
-      <li><strong>Blandas:</strong> Comunicación, análisis, responsabilidad, trabajo en equipo</li>
-    </ul>
-
-    <h2>Videocurrículum</h2>
-    <p>Puedes ver mi presentación profesional aquí:</p>
-    <a href="URL_DE_TU_VIDEO" target="_blank">Ver videocurrículum</a>
   </section>
 
+  <!-- EJEMPLOS DE TRABAJOS -->
+  <section>
+    <h2>Ejemplos de trabajos y logros</h2>
+    <ul>
+      <li>Proyecto de red segura en Packet Tracer</li>
+      <li>Administración de servidor Linux y Windows Server</li>
+      <li>Simulación de ciberataques y defensa en entornos virtuales</li>
+    </ul>
+    <img class="imagen-ciber" src="https://images.unsplash.com/photo-1610878180933-7f88a9f1c2f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2liZXJzZWN1cml0eXxlbnwwfHx8fDE2OTgzNjk2NzY&ixlib=rb-4.0.3&q=80&w=1080" alt="Imagen de ciberseguridad">
+  </section>
+
+  <!-- COMPETENCIAS -->
+  <section>
+    <h2>Competencias</h2>
+    <ul class="competencias">
+      <li><strong>Técnicas:</strong> Redes, Ciberseguridad, Linux, Windows Server, Packet Tracer, Configuración de routers</li>
+      <li><strong>Blandas:</strong> Comunicación, trabajo en equipo, análisis, responsabilidad, adaptabilidad</li>
+    </ul>
+  </section>
+
+  <!-- VIDEOCURRÍCULUM -->
+  <section>
+    <h2>Videocurrículum</h2>
+    <p>Puedes ver mi presentación profesional haciendo clic en el enlace:</p>
+    <a class="video-link" href="URL_DE_TU_VIDEO" target="_blank">Ver videocurrículum</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>Contacto: christophermortari@gmail.com | <a href="https://linkedin.com/in/christopher-mortari" style="color:white;">LinkedIn</a></p>
+    <p>Contacto: <a href="mailto:christophermortari@gmail.com">christophermortari@gmail.com</a> | <a href="https://linkedin.com/in/christophermortari" target="_blank">LinkedIn</a></p>
   </footer>
+
 </body>
 </html>
