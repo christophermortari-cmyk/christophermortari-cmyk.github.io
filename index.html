@@ -6,11 +6,10 @@
   <title>Christopher Mortari - Portfolio Profesional</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* --- General --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f111a; color: #fff; line-height: 1.6; scroll-behavior: smooth; }
 
-    /* --- Header con Parallax --- */
+    /* --- Header con fondo detrás de la foto --- */
     header {
       position: relative;
       height: 100vh;
@@ -21,13 +20,18 @@
       text-align: center;
       color: #fff;
       overflow: hidden;
-      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSia9aPTBjZcyXyN747zOF0Mex_YQYKFl6twg&s') no-repeat center center / cover;
+      background: #0f111a; /* fallback */
     }
     header::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSia9aPTBjZcyXyN747zOF0Mex_YQYKFl6twg&s') no-repeat center center / cover;
+      opacity: 0.35;
+      border-radius: 20px;
       z-index: 0;
     }
     header img {
@@ -38,6 +42,7 @@
       position: relative;
       z-index: 1;
       animation: float 4s ease-in-out infinite;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -54,6 +59,7 @@
       font-size: 1.3em;
       color: #c5c5c5;
       position: relative; z-index: 1;
+      max-width: 700px;
     }
 
     /* --- Secciones --- */
@@ -64,14 +70,9 @@
     ul li { margin-bottom: 10px; position: relative; padding-left: 25px; }
     ul li::before { content: "\f111"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: 0; color: #4cafef; font-size: 0.7em; }
 
-    /* --- Cards --- */
     .card { background: #1a1c2d; padding: 25px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.4); margin-bottom: 30px; transition: transform 0.3s, box-shadow 0.3s; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
 
-    /* --- Imagenes --- */
-    .imagen-ciber { display: block; max-width: 100%; margin: 20px auto; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
-
-    /* --- Botones animados --- */
     .btn {
       display: inline-block;
       padding: 14px 30px;
@@ -98,7 +99,6 @@
     .btn:hover::after { left: 0; }
     .btn:hover { transform: translateY(-3px); background: #357ab8; }
 
-    /* --- Footer --- */
     footer { text-align: center; padding: 30px; background: #1f1f38; margin-top: 50px; font-size: 0.95em; }
     footer a { color: #4cafef; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
@@ -110,13 +110,14 @@
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D4D03AQEU_04trVB9Yw/profile-displayphoto-shrink_800_800/B4DZZYdfYTGgAg-/0/1745240849225?e=1762387200&v=beta&t=smYgHlmgyqKmqpc5Z8751UbvRy998xJtHDMcEDmqwUc" alt="Foto de Christopher Mortari">
     <h1>Christopher Mortari</h1>
-    <p class="lema">"La seguridad es el corazón de la tecnología moderna"</p>
+    <p class="lema">"La seguridad es el corazón de la tecnología moderna. Me apasiona aprender sobre redes, sistemas y ciberseguridad, aplicando soluciones eficientes y seguras en entornos profesionales."</p>
   </header>
 
   <!-- BIOGRAFÍA -->
   <section class="card">
     <h2>Biografía breve</h2>
     <p>Soy estudiante de <strong>Administración de Redes con perfil en Ciberseguridad</strong> en IFP Planeta Formación y actualmente realizo mis <strong>prácticas en la empresa 480</strong>. Mi objetivo es desarrollarme en ciberseguridad, aportando soluciones seguras y eficientes en sistemas y redes.</p>
+    <p>Me interesa la protección de sistemas frente a ataques, auditoría de redes y la automatización de procesos para mejorar la seguridad y eficiencia de cualquier infraestructura.</p>
   </section>
 
   <!-- FORMACIÓN Y EXPERIENCIA -->
@@ -125,7 +126,8 @@
     <ul>
       <li>Grado: Administración de Redes con perfil en Ciberseguridad – IFP Planeta Formación</li>
       <li>Prácticas en empresa: 480 – Área de Sistemas y Soporte Técnico</li>
-      <li>Proyectos: Configuración de routers, simulaciones de redes con Packet Tracer, administración de sistemas Linux y Windows Server</li>
+      <li>Proyectos destacados: Configuración de routers, simulaciones de redes con Packet Tracer, administración de sistemas Linux y Windows Server, análisis de vulnerabilidades y seguridad de redes.</li>
+      <li>Conocimientos adicionales: Administración de bases de datos SQL, scripting en Python y Bash, uso de herramientas de ciberseguridad como Wireshark y Nmap.</li>
     </ul>
   </section>
 
@@ -133,19 +135,19 @@
   <section class="card">
     <h2>Ejemplos de trabajos y logros</h2>
     <ul>
-      <li>Proyecto de red segura en Packet Tracer</li>
-      <li>Administración de servidor Linux y Windows Server</li>
-      <li>Simulación de ciberataques y defensa en entornos virtuales</li>
+      <li>Proyecto de red segura en Packet Tracer implementando VLANs y firewalls.</li>
+      <li>Administración y optimización de servidor Linux y Windows Server.</li>
+      <li>Simulación de ciberataques y defensa en entornos virtuales para prácticas de seguridad ofensiva y defensiva.</li>
+      <li>Automatización de tareas de red mediante scripts y comandos avanzados.</li>
     </ul>
-    <img class="imagen-ciber" src="https://images.unsplash.com/photo-1610878180933-7f88a9f1c2f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Imagen de ciberseguridad">
   </section>
 
   <!-- COMPETENCIAS -->
   <section class="card">
     <h2>Competencias</h2>
     <ul>
-      <li><strong>Técnicas:</strong> Redes, Ciberseguridad, Linux, Windows Server, Packet Tracer, Configuración de routers</li>
-      <li><strong>Blandas:</strong> Comunicación, trabajo en equipo, análisis, responsabilidad, adaptabilidad</li>
+      <li><strong>Técnicas:</strong> Redes, Ciberseguridad, Linux, Windows Server, Packet Tracer, Configuración de routers, Auditoría de seguridad, Automatización con Python y Bash</li>
+      <li><strong>Blandas:</strong> Comunicación efectiva, trabajo en equipo, análisis crítico, responsabilidad, adaptabilidad y resolución de problemas</li>
     </ul>
   </section>
 
@@ -156,13 +158,11 @@
     <a class="btn" href="URL_DE_TU_VIDEO" target="_blank"><i class="fa-solid fa-video"></i> Ver videocurrículum</a>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>Contacto: <a href="mailto:christophermortari@gmail.com">christophermortari@gmail.com</a> | <a href="https://www.linkedin.com/in/christopher-mortari" target="_blank">LinkedIn</a></p>
   </footer>
 
   <script>
-    // Animación al hacer scroll
     const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
       sections.forEach(section => {
