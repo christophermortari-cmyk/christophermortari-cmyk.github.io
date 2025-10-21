@@ -13,21 +13,42 @@
     /* --- Header --- */
     header {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #1f1f38, #0f111a);
+      padding: 80px 20px;
       position: relative;
       overflow: hidden;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwF4IgZ8S5177wOpBDdcqMSUxK2BEw8PONw&s') no-repeat center center/cover;
+      filter: brightness(0.5);
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
     }
     header img {
       width: 160px;
       height: 160px;
       border-radius: 50%;
       border: 4px solid #4cafef;
+      position: relative;
+      z-index: 1;
       transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.1); }
-    header h1 { font-size: 2.5em; color: #4cafef; margin: 20px 0 10px; }
-    header p.lema { font-style: italic; color: #c5c5c5; font-size: 1.2em; }
+    header h1 {
+      font-size: 2.5em;
+      color: #4cafef;
+      margin: 20px 0 10px;
+      position: relative;
+      z-index: 1;
+    }
+    header p.lema {
+      font-style: italic;
+      color: #c5c5c5;
+      font-size: 1.2em;
+      position: relative;
+      z-index: 1;
+    }
 
     /* --- Section --- */
     section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
@@ -76,7 +97,7 @@
   <!-- BIOGRAFÍA -->
   <section class="card">
     <h2>Biografía breve</h2>
-    <p>Soy estudiante de <strong>Administración de Redes con perfil en Ciberseguridad</strong> en <strong>IFP Planeta Formación</strong> y actualmente realizo mis <strong>prácticas en la empresa 480</strong>. Mi objetivo es desarrollarme en ciberseguridad, aportando soluciones seguras y eficientes en sistemas y redes.</p>
+    <p>Soy estudiante de <strong>Administración de Redes con perfil en Ciberseguridad</strong> en IFP Planeta Formación y actualmente realizo mis <strong>prácticas en la empresa 480</strong>. Mi objetivo es desarrollarme en ciberseguridad, aportando soluciones seguras y eficientes en sistemas y redes.</p>
   </section>
 
   <!-- FORMACIÓN Y EXPERIENCIA -->
