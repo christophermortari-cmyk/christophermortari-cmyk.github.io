@@ -8,79 +8,98 @@
   <style>
     /* --- General --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f111a; color: #fff; line-height: 1.6; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f111a; color: #fff; line-height: 1.6; scroll-behavior: smooth; }
 
-    /* --- Header --- */
+    /* --- Header con Parallax --- */
     header {
-      text-align: center;
-      padding: 80px 20px;
       position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
       overflow: hidden;
-      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwF4IgZ8S5177wOpBDdcqMSUxK2BEw8PONw&s') no-repeat center center/cover;
-      filter: brightness(0.5);
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwF4IgZ8S5177wOpBDdcqMSUxK2BEw8PONw&s') no-repeat center center / cover;
     }
-    header::after {
+    header::before {
       content: "";
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.6);
+      z-index: 0;
     }
     header img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 4px solid #4cafef;
       position: relative;
       z-index: 1;
-      transition: transform 0.3s ease;
+      animation: float 4s ease-in-out infinite;
     }
-    header img:hover { transform: scale(1.1); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
     header h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       color: #4cafef;
       margin: 20px 0 10px;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
     header p.lema {
       font-style: italic;
+      font-size: 1.3em;
       color: #c5c5c5;
-      font-size: 1.2em;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
 
-    /* --- Section --- */
-    section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+    /* --- Secciones --- */
+    section { max-width: 1000px; margin: 50px auto; padding: 0 20px; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+    section.show { opacity: 1; transform: translateY(0); }
     h2 { color: #4cafef; margin-bottom: 15px; border-bottom: 2px solid #4cafef; display: inline-block; padding-bottom: 5px; }
-    p, li { font-size: 1.05em; }
     ul { list-style: none; padding-left: 0; }
     ul li { margin-bottom: 10px; position: relative; padding-left: 25px; }
     ul li::before { content: "\f111"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: 0; color: #4cafef; font-size: 0.7em; }
 
     /* --- Cards --- */
-    .card { background: #1a1c2d; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); margin-bottom: 30px; transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); }
+    .card { background: #1a1c2d; padding: 25px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.4); margin-bottom: 30px; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
 
     /* --- Imagenes --- */
-    .imagen-ciber { display: block; max-width: 100%; margin: 20px auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); }
+    .imagen-ciber { display: block; max-width: 100%; margin: 20px auto; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
 
-    /* --- Botones --- */
+    /* --- Botones animados --- */
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      margin-top: 10px;
+      padding: 14px 30px;
+      margin-top: 15px;
       border-radius: 8px;
       text-decoration: none;
       background: #4cafef;
       color: #fff;
       font-weight: bold;
-      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+      transition: 0.4s;
     }
-    .btn:hover { background: #357ab8; transform: translateY(-3px); }
+    .btn::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: rgba(255,255,255,0.2);
+      transition: all 0.4s;
+    }
+    .btn:hover::after { left: 0; }
+    .btn:hover { transform: translateY(-3px); background: #357ab8; }
 
     /* --- Footer --- */
-    footer { text-align: center; padding: 25px; background: #1f1f38; margin-top: 50px; font-size: 0.95em; }
+    footer { text-align: center; padding: 30px; background: #1f1f38; margin-top: 50px; font-size: 0.95em; }
     footer a { color: #4cafef; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
   </style>
@@ -141,6 +160,18 @@
   <footer>
     <p>Contacto: <a href="mailto:christophermortari@gmail.com">christophermortari@gmail.com</a> | <a href="https://linkedin.com/in/christophermortari" target="_blank">LinkedIn</a></p>
   </footer>
+
+  <script>
+    // Animación al hacer scroll
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) section.classList.add('show');
+      });
+    });
+  </script>
 
 </body>
 </html>
